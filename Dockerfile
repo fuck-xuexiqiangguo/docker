@@ -18,6 +18,9 @@ RUN wget -O /fuck-xuexiqiangguo.zip https://github.com/fuck-xuexiqiangguo/Fuck-X
     rm /fuck-xuexiqiangguo.zip && \
     chmod +x /app/Fuck学习强国
 
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 WORKDIR /app/
 
 COPY script.sh /
